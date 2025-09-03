@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://t04xmkgtd7i8"]
+
+[ext_resource type="Script" uid="uid://dcamley7r76ig" path="res://scenes/character/camera_controller.gd" id="1_6nn2t"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nxwtt"]
+radius = 0.3
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6nn2t"]
+radius = 0.3
+
+[node name="Character" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_nxwtt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_6nn2t")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731583, 0)
+script = ExtResource("1_6nn2t")
+
+[node name="HitScan" type="RayCast3D" parent="Camera3D"]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -100)
