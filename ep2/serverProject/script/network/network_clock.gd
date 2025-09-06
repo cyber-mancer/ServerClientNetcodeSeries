@@ -45,7 +45,7 @@ func s_ping(echoClientClockMs:int, echoClientTick:int):
 #region RPC PARITY
 
 
-@rpc("reliable") func c_pong(echoClientTick:int, echoClientClockMs:int): pass
+@rpc("reliable") func c_pong(serverTick:int, echoClientTick:int, echoClientClockMs:int): pass
 
 
 #endregion RPC FUNCTIONS
