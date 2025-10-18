@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://cyify8lmd4710"]
+[gd_scene load_steps=5 format=3 uid="uid://ulqu2ad1fp1"]
+
+[ext_resource type="Script" uid="uid://o5ovollyly87" path="res://scenes/world/game_state_manager.gd" id="1_e2mds"]
+[ext_resource type="PackedScene" uid="uid://t04xmkgtd7i8" path="res://scenes/character/character.tscn" id="3_s7afl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dphjl"]
+size = Vector3(14.0357, 0.229823, 14.0357)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sl2e5"]
 
 [node name="GameStateManager" type="Node3D"]
+script = ExtResource("1_e2mds")
+characterScene = ExtResource("3_s7afl")
+
+[node name="GroundStaticBody" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundStaticBody"]
+shape = SubResource("BoxShape3D_dphjl")
+
+[node name="CubeStaticBody" type="StaticBody3D" parent="."]
+transform = Transform3D(0.961069, 0, -0.276308, 0, 1, 0, 0.276308, 0, 0.961069, 1.43323, 0.578447, 2.31242)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CubeStaticBody"]
+shape = SubResource("BoxShape3D_sl2e5")
+
+[node name="CubeStaticBody2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.829729, 0, -1.05857, 0, 1.345, 0, 1.05857, 0, 0.829729, -0.00181675, 0.578447, 2.79953)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CubeStaticBody2"]
+shape = SubResource("BoxShape3D_sl2e5")
+
+[node name="Characters" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.8153704, -0.22762273, 0.5323148, 1.4901161e-08, 0.91946507, 0.3931718, -0.5789397, -0.3205806, 0.7497046, 3.714566, 2.9599168, 3.921146)
+fov = 88.8

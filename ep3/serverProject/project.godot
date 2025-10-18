@@ -11,14 +11,11 @@ config_version=5
 [application]
 
 config/name="ServerProject"
-run/main_scene="uid://cyify8lmd4710"
+run/main_scene="uid://ulqu2ad1fp1"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
 
 NetworkServer="*res://script/network/network_server.gd"
 NetworkClock="*res://script/network/network_clock.gd"
-
-[editor]
-
-run/main_run_args="--headless"
+NetworkPlayerState="*res://script/network/network_player_state.gd"

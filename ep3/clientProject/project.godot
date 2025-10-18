@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 
 NetworkServer="*res://script/network/network_server.gd"
 NetworkClock="*res://script/network/network_clock.gd"
+NetworkPlayerState="*res://script/network/network_player_state.gd"
 
 [file_customization]
 

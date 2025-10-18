@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://t04xmkgtd7i8"]
+[gd_scene load_steps=5 format=3 uid="uid://t04xmkgtd7i8"]
 
 [ext_resource type="Script" uid="uid://dcamley7r76ig" path="res://scenes/character/camera_controller.gd" id="1_6nn2t"]
+[ext_resource type="Script" uid="uid://dg8ssli0c2ea3" path="res://scenes/character/character.gd" id="1_cuyo6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nxwtt"]
 radius = 0.3
@@ -9,6 +10,7 @@ radius = 0.3
 radius = 0.3
 
 [node name="Character" type="CharacterBody3D"]
+script = ExtResource("1_cuyo6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_nxwtt")

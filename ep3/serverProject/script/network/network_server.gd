@@ -12,6 +12,9 @@ extends Node
 @export var maxPlayers:int = 2
 
 
+var gameStateManager:GameStateManager
+
+
 var runningHeadless:bool = false # Set in _ready().
 
 
@@ -96,7 +99,8 @@ func _peerConnected(connectedClientId:int):
 	# If the server is finally full
 	if len(connectedClients) == maxPlayers:
 		print("Server: Game full, switching to lobby screen.")
-		# TODO next episode!
+		
+		gameStateManager.spawnPlayers()
 
 
 
@@ -111,7 +115,7 @@ func _peerDisconnected(disconnectedClientId:int):
 	)
 	
 	# Despawn the player on all clients.
-	# TODO next episode!
+	gameStateManager.despawnCharacter(disconnectedClientId)
 
 
 #endregion
